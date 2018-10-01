@@ -1,0 +1,1291 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		044911802162932900EA2CCC /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0449117F2162932900EA2CCC /* Reachability.swift */; };
+		04B1923421629B68000716DB /* IPChecker.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B1923221629B68000716DB /* IPChecker.m */; };
+		04B1923521629B68000716DB /* IPChecker.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B1923221629B68000716DB /* IPChecker.m */; };
+		04B192392162A38B000716DB /* SocketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CB5DC0215D724500A53906 /* SocketManager.swift */; };
+		04BF3BF32162991700F821A9 /* Bonjour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CB5DBA215D71F800A53906 /* Bonjour.swift */; };
+		04BF3BF42162992C00F821A9 /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CB5DBC215D720400A53906 /* Server.swift */; };
+		04BF3BF52162992F00F821A9 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CB5DBE215D720F00A53906 /* Client.swift */; };
+		04BF3BF72162993C00F821A9 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0449117F2162932900EA2CCC /* Reachability.swift */; };
+		04CB5D53215D6FCE00A53906 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CB5D52215D6FCE00A53906 /* AppDelegate.swift */; };
+		04CB5D55215D6FCE00A53906 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CB5D54215D6FCE00A53906 /* MenuViewController.swift */; };
+		04CB5D58215D6FCE00A53906 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04CB5D56215D6FCE00A53906 /* Main.storyboard */; };
+		04CB5D5D215D6FD000A53906 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04CB5D5B215D6FD000A53906 /* LaunchScreen.storyboard */; };
+		04CB5D68215D6FD000A53906 /* BonjourDevTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CB5D67215D6FD000A53906 /* BonjourDevTests.swift */; };
+		04CB5D73215D6FD000A53906 /* BonjourDevUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CB5D72215D6FD000A53906 /* BonjourDevUITests.swift */; };
+		04CB5D87215D70A700A53906 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CB5D86215D70A700A53906 /* AppDelegate.swift */; };
+		04CB5D8C215D70A700A53906 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04CB5D8A215D70A700A53906 /* Main.storyboard */; };
+		04CB5D8E215D70A800A53906 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04CB5D8D215D70A800A53906 /* Assets.xcassets */; };
+		04CB5D99215D70A800A53906 /* BonjourDev_TVTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CB5D98215D70A800A53906 /* BonjourDev_TVTests.swift */; };
+		04CB5DA4215D70A800A53906 /* BonjourDev_TVUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CB5DA3215D70A800A53906 /* BonjourDev_TVUITests.swift */; };
+		04CB5DBB215D71F800A53906 /* Bonjour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CB5DBA215D71F800A53906 /* Bonjour.swift */; };
+		04CB5DBD215D720400A53906 /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CB5DBC215D720400A53906 /* Server.swift */; };
+		04CB5DBF215D720F00A53906 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CB5DBE215D720F00A53906 /* Client.swift */; };
+		04CB5DC1215D724500A53906 /* SocketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CB5DC0215D724500A53906 /* SocketManager.swift */; };
+		04CB5DCB215D736000A53906 /* TVMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CB5DC9215D735B00A53906 /* TVMenuViewController.swift */; };
+		04CB5DD3215D7E3B00A53906 /* UIExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CB5DCE215D783300A53906 /* UIExtension.swift */; };
+		04CB5DD4215D7E3C00A53906 /* UIExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CB5DCE215D783300A53906 /* UIExtension.swift */; };
+		04CB5DD5215D801000A53906 /* TVSearchingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CB5DCC215D76D100A53906 /* TVSearchingViewController.swift */; };
+		04CB5DD7215D801800A53906 /* TVActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CB5DD1215D788D00A53906 /* TVActionViewController.swift */; };
+		04CB5DD9215D926000A53906 /* SearchingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CB5DD8215D926000A53906 /* SearchingViewController.swift */; };
+		04CB5DDB215D937700A53906 /* ActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CB5DDA215D937700A53906 /* ActionViewController.swift */; };
+		04CB5DDC215DA36A00A53906 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04CB5D8D215D70A800A53906 /* Assets.xcassets */; };
+		16A1FA33848D3DA570F37D8B /* Pods_BonjourDev_TV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D40DA40BA9DD161F4D8D169 /* Pods_BonjourDev_TV.framework */; };
+		83DB93A3C5FA2D903BB84B10 /* Pods_BonjourDev.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE21A20363199FED1694CB46 /* Pods_BonjourDev.framework */; };
+		92EE1815AE67683B7A417394 /* Pods_BonjourDevUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C54CDD7B107C5C47498749BE /* Pods_BonjourDevUITests.framework */; };
+		A6F1C598EDD16BB6ABADC263 /* Pods_BonjourDevTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E057B366DC3716E196F49B7 /* Pods_BonjourDevTests.framework */; };
+		E6C744B3E98E1AABB4B0C372 /* Pods_BonjourDev_TVUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF355B77ECBBBEDE6FAA281A /* Pods_BonjourDev_TVUITests.framework */; };
+		F5352C58B790524593F5DE5D /* Pods_BonjourDev_TVTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9914DB0499C8CC020201BE49 /* Pods_BonjourDev_TVTests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		04CB5D64215D6FD000A53906 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 04CB5D47215D6FCE00A53906 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 04CB5D4E215D6FCE00A53906;
+			remoteInfo = BonjourDev;
+		};
+		04CB5D6F215D6FD000A53906 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 04CB5D47215D6FCE00A53906 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 04CB5D4E215D6FCE00A53906;
+			remoteInfo = BonjourDev;
+		};
+		04CB5D95215D70A800A53906 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 04CB5D47215D6FCE00A53906 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 04CB5D83215D70A600A53906;
+			remoteInfo = "BonjourDev-TV";
+		};
+		04CB5DA0215D70A800A53906 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 04CB5D47215D6FCE00A53906 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 04CB5D83215D70A600A53906;
+			remoteInfo = "BonjourDev-TV";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		01A5E93A68CF0E171BD7A79C /* Pods-BonjourDev-TVUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BonjourDev-TVUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BonjourDev-TVUITests/Pods-BonjourDev-TVUITests.release.xcconfig"; sourceTree = "<group>"; };
+		0449117F2162932900EA2CCC /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		04B1923121629B67000716DB /* BonjourDev-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BonjourDev-Bridging-Header.h"; sourceTree = "<group>"; };
+		04B1923221629B68000716DB /* IPChecker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPChecker.m; sourceTree = "<group>"; };
+		04B1923321629B68000716DB /* IPChecker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPChecker.h; sourceTree = "<group>"; };
+		04CB5D4F215D6FCE00A53906 /* BonjourDev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BonjourDev.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		04CB5D52215D6FCE00A53906 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		04CB5D54215D6FCE00A53906 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		04CB5D57215D6FCE00A53906 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		04CB5D5C215D6FD000A53906 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		04CB5D5E215D6FD000A53906 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04CB5D63215D6FD000A53906 /* BonjourDevTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BonjourDevTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		04CB5D67215D6FD000A53906 /* BonjourDevTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonjourDevTests.swift; sourceTree = "<group>"; };
+		04CB5D69215D6FD000A53906 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04CB5D6E215D6FD000A53906 /* BonjourDevUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BonjourDevUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		04CB5D72215D6FD000A53906 /* BonjourDevUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonjourDevUITests.swift; sourceTree = "<group>"; };
+		04CB5D74215D6FD000A53906 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04CB5D84215D70A600A53906 /* BonjourDev-TV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BonjourDev-TV.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		04CB5D86215D70A700A53906 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		04CB5D8B215D70A700A53906 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		04CB5D8D215D70A800A53906 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		04CB5D8F215D70A800A53906 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04CB5D94215D70A800A53906 /* BonjourDev-TVTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "BonjourDev-TVTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		04CB5D98215D70A800A53906 /* BonjourDev_TVTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonjourDev_TVTests.swift; sourceTree = "<group>"; };
+		04CB5D9A215D70A800A53906 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04CB5D9F215D70A800A53906 /* BonjourDev-TVUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "BonjourDev-TVUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		04CB5DA3215D70A800A53906 /* BonjourDev_TVUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonjourDev_TVUITests.swift; sourceTree = "<group>"; };
+		04CB5DA5215D70A800A53906 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04CB5DBA215D71F800A53906 /* Bonjour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bonjour.swift; sourceTree = "<group>"; };
+		04CB5DBC215D720400A53906 /* Server.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
+		04CB5DBE215D720F00A53906 /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
+		04CB5DC0215D724500A53906 /* SocketManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketManager.swift; sourceTree = "<group>"; };
+		04CB5DC9215D735B00A53906 /* TVMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TVMenuViewController.swift; sourceTree = "<group>"; };
+		04CB5DCC215D76D100A53906 /* TVSearchingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVSearchingViewController.swift; sourceTree = "<group>"; };
+		04CB5DCE215D783300A53906 /* UIExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtension.swift; sourceTree = "<group>"; };
+		04CB5DD1215D788D00A53906 /* TVActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVActionViewController.swift; sourceTree = "<group>"; };
+		04CB5DD8215D926000A53906 /* SearchingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchingViewController.swift; sourceTree = "<group>"; };
+		04CB5DDA215D937700A53906 /* ActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionViewController.swift; sourceTree = "<group>"; };
+		1D40DA40BA9DD161F4D8D169 /* Pods_BonjourDev_TV.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BonjourDev_TV.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		31976003739FD891B0BE52ED /* Pods-BonjourDev.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BonjourDev.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BonjourDev/Pods-BonjourDev.debug.xcconfig"; sourceTree = "<group>"; };
+		3E0FE614E1E8085CF3552C7E /* Pods-BonjourDev-TV.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BonjourDev-TV.release.xcconfig"; path = "Pods/Target Support Files/Pods-BonjourDev-TV/Pods-BonjourDev-TV.release.xcconfig"; sourceTree = "<group>"; };
+		3EB4A019922295B5DF557387 /* Pods-BonjourDevTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BonjourDevTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BonjourDevTests/Pods-BonjourDevTests.release.xcconfig"; sourceTree = "<group>"; };
+		41C1D847D4E1BAACBB6089D5 /* Pods-BonjourDevUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BonjourDevUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BonjourDevUITests/Pods-BonjourDevUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		611C34BD7E68169DCC605017 /* Pods-BonjourDev.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BonjourDev.release.xcconfig"; path = "Pods/Target Support Files/Pods-BonjourDev/Pods-BonjourDev.release.xcconfig"; sourceTree = "<group>"; };
+		6E057B366DC3716E196F49B7 /* Pods_BonjourDevTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BonjourDevTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9914DB0499C8CC020201BE49 /* Pods_BonjourDev_TVTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BonjourDev_TVTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A94A5F9F8D3BF29860BAC44F /* Pods-BonjourDev-TV.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BonjourDev-TV.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BonjourDev-TV/Pods-BonjourDev-TV.debug.xcconfig"; sourceTree = "<group>"; };
+		B61AF5A90F777FD4EC47E85D /* Pods-BonjourDev-TVTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BonjourDev-TVTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BonjourDev-TVTests/Pods-BonjourDev-TVTests.release.xcconfig"; sourceTree = "<group>"; };
+		BDA3E5BD1A5411EEFC109273 /* Pods-BonjourDev-TVTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BonjourDev-TVTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BonjourDev-TVTests/Pods-BonjourDev-TVTests.debug.xcconfig"; sourceTree = "<group>"; };
+		BE21A20363199FED1694CB46 /* Pods_BonjourDev.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BonjourDev.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE57AB6FDC86EE49EF409BAC /* Pods-BonjourDev-TVUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BonjourDev-TVUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BonjourDev-TVUITests/Pods-BonjourDev-TVUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		C30312434F42C5BDB46D2945 /* Pods-BonjourDevTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BonjourDevTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BonjourDevTests/Pods-BonjourDevTests.debug.xcconfig"; sourceTree = "<group>"; };
+		C54CDD7B107C5C47498749BE /* Pods_BonjourDevUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BonjourDevUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D624E253949A3D214D5E06B2 /* Pods-BonjourDevUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BonjourDevUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BonjourDevUITests/Pods-BonjourDevUITests.release.xcconfig"; sourceTree = "<group>"; };
+		EF355B77ECBBBEDE6FAA281A /* Pods_BonjourDev_TVUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BonjourDev_TVUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		04CB5D4C215D6FCE00A53906 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				83DB93A3C5FA2D903BB84B10 /* Pods_BonjourDev.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04CB5D60215D6FD000A53906 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A6F1C598EDD16BB6ABADC263 /* Pods_BonjourDevTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04CB5D6B215D6FD000A53906 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92EE1815AE67683B7A417394 /* Pods_BonjourDevUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04CB5D81215D70A600A53906 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				16A1FA33848D3DA570F37D8B /* Pods_BonjourDev_TV.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04CB5D91215D70A800A53906 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F5352C58B790524593F5DE5D /* Pods_BonjourDev_TVTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04CB5D9C215D70A800A53906 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E6C744B3E98E1AABB4B0C372 /* Pods_BonjourDev_TVUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		04B1923021629B51000716DB /* IPChecker */ = {
+			isa = PBXGroup;
+			children = (
+				04B1923321629B68000716DB /* IPChecker.h */,
+				04B1923221629B68000716DB /* IPChecker.m */,
+				04B1923121629B67000716DB /* BonjourDev-Bridging-Header.h */,
+			);
+			path = IPChecker;
+			sourceTree = "<group>";
+		};
+		04CB5D46215D6FCE00A53906 = {
+			isa = PBXGroup;
+			children = (
+				04CB5D8D215D70A800A53906 /* Assets.xcassets */,
+				04CB5DAF215D70BD00A53906 /* Model */,
+				04CB5DB5215D715800A53906 /* Controller */,
+				04CB5DB0215D70C300A53906 /* View  */,
+				04CB5D51215D6FCE00A53906 /* BonjourDev */,
+				04CB5D66215D6FD000A53906 /* BonjourDevTests */,
+				04CB5D71215D6FD000A53906 /* BonjourDevUITests */,
+				04CB5D85215D70A700A53906 /* BonjourDev-TV */,
+				04CB5D97215D70A800A53906 /* BonjourDev-TVTests */,
+				04CB5DA2215D70A800A53906 /* BonjourDev-TVUITests */,
+				04CB5D50215D6FCE00A53906 /* Products */,
+				92135CA97899B5B570127221 /* Pods */,
+				751A29D36B80435ACAAE1565 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		04CB5D50215D6FCE00A53906 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				04CB5D4F215D6FCE00A53906 /* BonjourDev.app */,
+				04CB5D63215D6FD000A53906 /* BonjourDevTests.xctest */,
+				04CB5D6E215D6FD000A53906 /* BonjourDevUITests.xctest */,
+				04CB5D84215D70A600A53906 /* BonjourDev-TV.app */,
+				04CB5D94215D70A800A53906 /* BonjourDev-TVTests.xctest */,
+				04CB5D9F215D70A800A53906 /* BonjourDev-TVUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		04CB5D51215D6FCE00A53906 /* BonjourDev */ = {
+			isa = PBXGroup;
+			children = (
+				04CB5D52215D6FCE00A53906 /* AppDelegate.swift */,
+				04CB5D5B215D6FD000A53906 /* LaunchScreen.storyboard */,
+				04CB5D5E215D6FD000A53906 /* Info.plist */,
+			);
+			path = BonjourDev;
+			sourceTree = "<group>";
+		};
+		04CB5D66215D6FD000A53906 /* BonjourDevTests */ = {
+			isa = PBXGroup;
+			children = (
+				04CB5D67215D6FD000A53906 /* BonjourDevTests.swift */,
+				04CB5D69215D6FD000A53906 /* Info.plist */,
+			);
+			path = BonjourDevTests;
+			sourceTree = "<group>";
+		};
+		04CB5D71215D6FD000A53906 /* BonjourDevUITests */ = {
+			isa = PBXGroup;
+			children = (
+				04CB5D72215D6FD000A53906 /* BonjourDevUITests.swift */,
+				04CB5D74215D6FD000A53906 /* Info.plist */,
+			);
+			path = BonjourDevUITests;
+			sourceTree = "<group>";
+		};
+		04CB5D85215D70A700A53906 /* BonjourDev-TV */ = {
+			isa = PBXGroup;
+			children = (
+				04CB5D86215D70A700A53906 /* AppDelegate.swift */,
+				04CB5D8F215D70A800A53906 /* Info.plist */,
+			);
+			path = "BonjourDev-TV";
+			sourceTree = "<group>";
+		};
+		04CB5D97215D70A800A53906 /* BonjourDev-TVTests */ = {
+			isa = PBXGroup;
+			children = (
+				04CB5D98215D70A800A53906 /* BonjourDev_TVTests.swift */,
+				04CB5D9A215D70A800A53906 /* Info.plist */,
+			);
+			path = "BonjourDev-TVTests";
+			sourceTree = "<group>";
+		};
+		04CB5DA2215D70A800A53906 /* BonjourDev-TVUITests */ = {
+			isa = PBXGroup;
+			children = (
+				04CB5DA3215D70A800A53906 /* BonjourDev_TVUITests.swift */,
+				04CB5DA5215D70A800A53906 /* Info.plist */,
+			);
+			path = "BonjourDev-TVUITests";
+			sourceTree = "<group>";
+		};
+		04CB5DAF215D70BD00A53906 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				04B1923021629B51000716DB /* IPChecker */,
+				04CB5DBA215D71F800A53906 /* Bonjour.swift */,
+				04CB5DBC215D720400A53906 /* Server.swift */,
+				04CB5DBE215D720F00A53906 /* Client.swift */,
+				04CB5DC0215D724500A53906 /* SocketManager.swift */,
+				0449117F2162932900EA2CCC /* Reachability.swift */,
+				04CB5DD0215D783900A53906 /* Extensions */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		04CB5DB0215D70C300A53906 /* View  */ = {
+			isa = PBXGroup;
+			children = (
+				04CB5DB6215D716600A53906 /* Mobile */,
+				04CB5DB4215D715000A53906 /* TV */,
+			);
+			path = "View ";
+			sourceTree = "<group>";
+		};
+		04CB5DB4215D715000A53906 /* TV */ = {
+			isa = PBXGroup;
+			children = (
+				04CB5D8A215D70A700A53906 /* Main.storyboard */,
+			);
+			path = TV;
+			sourceTree = "<group>";
+		};
+		04CB5DB5215D715800A53906 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				04CB5DB8215D71AF00A53906 /* Mobile */,
+				04CB5DB9215D71B800A53906 /* TV */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		04CB5DB6215D716600A53906 /* Mobile */ = {
+			isa = PBXGroup;
+			children = (
+				04CB5D56215D6FCE00A53906 /* Main.storyboard */,
+			);
+			path = Mobile;
+			sourceTree = "<group>";
+		};
+		04CB5DB8215D71AF00A53906 /* Mobile */ = {
+			isa = PBXGroup;
+			children = (
+				04CB5D54215D6FCE00A53906 /* MenuViewController.swift */,
+				04CB5DD8215D926000A53906 /* SearchingViewController.swift */,
+				04CB5DDA215D937700A53906 /* ActionViewController.swift */,
+			);
+			path = Mobile;
+			sourceTree = "<group>";
+		};
+		04CB5DB9215D71B800A53906 /* TV */ = {
+			isa = PBXGroup;
+			children = (
+				04CB5DC9215D735B00A53906 /* TVMenuViewController.swift */,
+				04CB5DCC215D76D100A53906 /* TVSearchingViewController.swift */,
+				04CB5DD1215D788D00A53906 /* TVActionViewController.swift */,
+			);
+			path = TV;
+			sourceTree = "<group>";
+		};
+		04CB5DD0215D783900A53906 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				04CB5DCE215D783300A53906 /* UIExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		751A29D36B80435ACAAE1565 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BE21A20363199FED1694CB46 /* Pods_BonjourDev.framework */,
+				9914DB0499C8CC020201BE49 /* Pods_BonjourDev_TVTests.framework */,
+				EF355B77ECBBBEDE6FAA281A /* Pods_BonjourDev_TVUITests.framework */,
+				6E057B366DC3716E196F49B7 /* Pods_BonjourDevTests.framework */,
+				C54CDD7B107C5C47498749BE /* Pods_BonjourDevUITests.framework */,
+				1D40DA40BA9DD161F4D8D169 /* Pods_BonjourDev_TV.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		92135CA97899B5B570127221 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				31976003739FD891B0BE52ED /* Pods-BonjourDev.debug.xcconfig */,
+				611C34BD7E68169DCC605017 /* Pods-BonjourDev.release.xcconfig */,
+				A94A5F9F8D3BF29860BAC44F /* Pods-BonjourDev-TV.debug.xcconfig */,
+				3E0FE614E1E8085CF3552C7E /* Pods-BonjourDev-TV.release.xcconfig */,
+				BDA3E5BD1A5411EEFC109273 /* Pods-BonjourDev-TVTests.debug.xcconfig */,
+				B61AF5A90F777FD4EC47E85D /* Pods-BonjourDev-TVTests.release.xcconfig */,
+				BE57AB6FDC86EE49EF409BAC /* Pods-BonjourDev-TVUITests.debug.xcconfig */,
+				01A5E93A68CF0E171BD7A79C /* Pods-BonjourDev-TVUITests.release.xcconfig */,
+				C30312434F42C5BDB46D2945 /* Pods-BonjourDevTests.debug.xcconfig */,
+				3EB4A019922295B5DF557387 /* Pods-BonjourDevTests.release.xcconfig */,
+				41C1D847D4E1BAACBB6089D5 /* Pods-BonjourDevUITests.debug.xcconfig */,
+				D624E253949A3D214D5E06B2 /* Pods-BonjourDevUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		04CB5D4E215D6FCE00A53906 /* BonjourDev */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04CB5D77215D6FD000A53906 /* Build configuration list for PBXNativeTarget "BonjourDev" */;
+			buildPhases = (
+				53E101A1128BE93CFF82CF51 /* [CP] Check Pods Manifest.lock */,
+				04CB5D4B215D6FCE00A53906 /* Sources */,
+				04CB5D4C215D6FCE00A53906 /* Frameworks */,
+				04CB5D4D215D6FCE00A53906 /* Resources */,
+				56EF02B0B459DE5C217240FA /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BonjourDev;
+			productName = BonjourDev;
+			productReference = 04CB5D4F215D6FCE00A53906 /* BonjourDev.app */;
+			productType = "com.apple.product-type.application";
+		};
+		04CB5D62215D6FD000A53906 /* BonjourDevTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04CB5D7A215D6FD000A53906 /* Build configuration list for PBXNativeTarget "BonjourDevTests" */;
+			buildPhases = (
+				40531D1EFC10BC14A38AFE23 /* [CP] Check Pods Manifest.lock */,
+				04CB5D5F215D6FD000A53906 /* Sources */,
+				04CB5D60215D6FD000A53906 /* Frameworks */,
+				04CB5D61215D6FD000A53906 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				04CB5D65215D6FD000A53906 /* PBXTargetDependency */,
+			);
+			name = BonjourDevTests;
+			productName = BonjourDevTests;
+			productReference = 04CB5D63215D6FD000A53906 /* BonjourDevTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		04CB5D6D215D6FD000A53906 /* BonjourDevUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04CB5D7D215D6FD000A53906 /* Build configuration list for PBXNativeTarget "BonjourDevUITests" */;
+			buildPhases = (
+				0D12AFFA75096AF126B44F63 /* [CP] Check Pods Manifest.lock */,
+				04CB5D6A215D6FD000A53906 /* Sources */,
+				04CB5D6B215D6FD000A53906 /* Frameworks */,
+				04CB5D6C215D6FD000A53906 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				04CB5D70215D6FD000A53906 /* PBXTargetDependency */,
+			);
+			name = BonjourDevUITests;
+			productName = BonjourDevUITests;
+			productReference = 04CB5D6E215D6FD000A53906 /* BonjourDevUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		04CB5D83215D70A600A53906 /* BonjourDev-TV */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04CB5DA6215D70A800A53906 /* Build configuration list for PBXNativeTarget "BonjourDev-TV" */;
+			buildPhases = (
+				56BE85E9D76C82818F3E875A /* [CP] Check Pods Manifest.lock */,
+				04CB5D80215D70A600A53906 /* Sources */,
+				04CB5D81215D70A600A53906 /* Frameworks */,
+				04CB5D82215D70A600A53906 /* Resources */,
+				A3F5567D8D7EC26D98AE4247 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "BonjourDev-TV";
+			productName = "BonjourDev-TV";
+			productReference = 04CB5D84215D70A600A53906 /* BonjourDev-TV.app */;
+			productType = "com.apple.product-type.application";
+		};
+		04CB5D93215D70A800A53906 /* BonjourDev-TVTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04CB5DA9215D70A800A53906 /* Build configuration list for PBXNativeTarget "BonjourDev-TVTests" */;
+			buildPhases = (
+				8C0E4F1B0348EB366150DA94 /* [CP] Check Pods Manifest.lock */,
+				04CB5D90215D70A800A53906 /* Sources */,
+				04CB5D91215D70A800A53906 /* Frameworks */,
+				04CB5D92215D70A800A53906 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				04CB5D96215D70A800A53906 /* PBXTargetDependency */,
+			);
+			name = "BonjourDev-TVTests";
+			productName = "BonjourDev-TVTests";
+			productReference = 04CB5D94215D70A800A53906 /* BonjourDev-TVTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		04CB5D9E215D70A800A53906 /* BonjourDev-TVUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04CB5DAC215D70A800A53906 /* Build configuration list for PBXNativeTarget "BonjourDev-TVUITests" */;
+			buildPhases = (
+				BF831807609B1BCEBE7F9BD5 /* [CP] Check Pods Manifest.lock */,
+				04CB5D9B215D70A800A53906 /* Sources */,
+				04CB5D9C215D70A800A53906 /* Frameworks */,
+				04CB5D9D215D70A800A53906 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				04CB5DA1215D70A800A53906 /* PBXTargetDependency */,
+			);
+			name = "BonjourDev-TVUITests";
+			productName = "BonjourDev-TVUITests";
+			productReference = 04CB5D9F215D70A800A53906 /* BonjourDev-TVUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		04CB5D47215D6FCE00A53906 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0940;
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = "Mark Duek";
+				TargetAttributes = {
+					04CB5D4E215D6FCE00A53906 = {
+						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 0940;
+					};
+					04CB5D62215D6FD000A53906 = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = 04CB5D4E215D6FCE00A53906;
+					};
+					04CB5D6D215D6FD000A53906 = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = 04CB5D4E215D6FCE00A53906;
+					};
+					04CB5D83215D70A600A53906 = {
+						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 0940;
+					};
+					04CB5D93215D70A800A53906 = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = 04CB5D83215D70A600A53906;
+					};
+					04CB5D9E215D70A800A53906 = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = 04CB5D83215D70A600A53906;
+					};
+				};
+			};
+			buildConfigurationList = 04CB5D4A215D6FCE00A53906 /* Build configuration list for PBXProject "BonjourDev" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 04CB5D46215D6FCE00A53906;
+			productRefGroup = 04CB5D50215D6FCE00A53906 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				04CB5D4E215D6FCE00A53906 /* BonjourDev */,
+				04CB5D62215D6FD000A53906 /* BonjourDevTests */,
+				04CB5D6D215D6FD000A53906 /* BonjourDevUITests */,
+				04CB5D83215D70A600A53906 /* BonjourDev-TV */,
+				04CB5D93215D70A800A53906 /* BonjourDev-TVTests */,
+				04CB5D9E215D70A800A53906 /* BonjourDev-TVUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		04CB5D4D215D6FCE00A53906 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04CB5D5D215D6FD000A53906 /* LaunchScreen.storyboard in Resources */,
+				04CB5DDC215DA36A00A53906 /* Assets.xcassets in Resources */,
+				04CB5D58215D6FCE00A53906 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04CB5D61215D6FD000A53906 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04CB5D6C215D6FD000A53906 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04CB5D82215D70A600A53906 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04CB5D8E215D70A800A53906 /* Assets.xcassets in Resources */,
+				04CB5D8C215D70A700A53906 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04CB5D92215D70A800A53906 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04CB5D9D215D70A800A53906 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0D12AFFA75096AF126B44F63 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BonjourDevUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		40531D1EFC10BC14A38AFE23 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BonjourDevTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		53E101A1128BE93CFF82CF51 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BonjourDev-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		56BE85E9D76C82818F3E875A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BonjourDev-TV-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		56EF02B0B459DE5C217240FA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-BonjourDev/Pods-BonjourDev-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BlueSocket-iOS/Socket.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Socket.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BonjourDev/Pods-BonjourDev-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8C0E4F1B0348EB366150DA94 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BonjourDev-TVTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A3F5567D8D7EC26D98AE4247 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-BonjourDev-TV/Pods-BonjourDev-TV-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BlueSocket-tvOS/Socket.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Socket.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BonjourDev-TV/Pods-BonjourDev-TV-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BF831807609B1BCEBE7F9BD5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BonjourDev-TVUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		04CB5D4B215D6FCE00A53906 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04B1923421629B68000716DB /* IPChecker.m in Sources */,
+				04CB5DD4215D7E3C00A53906 /* UIExtension.swift in Sources */,
+				04CB5D55215D6FCE00A53906 /* MenuViewController.swift in Sources */,
+				04CB5D53215D6FCE00A53906 /* AppDelegate.swift in Sources */,
+				04CB5DD9215D926000A53906 /* SearchingViewController.swift in Sources */,
+				04CB5DBD215D720400A53906 /* Server.swift in Sources */,
+				04CB5DBF215D720F00A53906 /* Client.swift in Sources */,
+				04CB5DDB215D937700A53906 /* ActionViewController.swift in Sources */,
+				044911802162932900EA2CCC /* Reachability.swift in Sources */,
+				04CB5DC1215D724500A53906 /* SocketManager.swift in Sources */,
+				04CB5DBB215D71F800A53906 /* Bonjour.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04CB5D5F215D6FD000A53906 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04CB5D68215D6FD000A53906 /* BonjourDevTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04CB5D6A215D6FD000A53906 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04CB5D73215D6FD000A53906 /* BonjourDevUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04CB5D80215D70A600A53906 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04B1923521629B68000716DB /* IPChecker.m in Sources */,
+				04CB5DD5215D801000A53906 /* TVSearchingViewController.swift in Sources */,
+				04CB5DD3215D7E3B00A53906 /* UIExtension.swift in Sources */,
+				04CB5DD7215D801800A53906 /* TVActionViewController.swift in Sources */,
+				04B192392162A38B000716DB /* SocketManager.swift in Sources */,
+				04CB5DCB215D736000A53906 /* TVMenuViewController.swift in Sources */,
+				04BF3BF32162991700F821A9 /* Bonjour.swift in Sources */,
+				04BF3BF72162993C00F821A9 /* Reachability.swift in Sources */,
+				04BF3BF42162992C00F821A9 /* Server.swift in Sources */,
+				04CB5D87215D70A700A53906 /* AppDelegate.swift in Sources */,
+				04BF3BF52162992F00F821A9 /* Client.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04CB5D90215D70A800A53906 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04CB5D99215D70A800A53906 /* BonjourDev_TVTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04CB5D9B215D70A800A53906 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04CB5DA4215D70A800A53906 /* BonjourDev_TVUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		04CB5D65215D6FD000A53906 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 04CB5D4E215D6FCE00A53906 /* BonjourDev */;
+			targetProxy = 04CB5D64215D6FD000A53906 /* PBXContainerItemProxy */;
+		};
+		04CB5D70215D6FD000A53906 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 04CB5D4E215D6FCE00A53906 /* BonjourDev */;
+			targetProxy = 04CB5D6F215D6FD000A53906 /* PBXContainerItemProxy */;
+		};
+		04CB5D96215D70A800A53906 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 04CB5D83215D70A600A53906 /* BonjourDev-TV */;
+			targetProxy = 04CB5D95215D70A800A53906 /* PBXContainerItemProxy */;
+		};
+		04CB5DA1215D70A800A53906 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 04CB5D83215D70A600A53906 /* BonjourDev-TV */;
+			targetProxy = 04CB5DA0215D70A800A53906 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		04CB5D56215D6FCE00A53906 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				04CB5D57215D6FCE00A53906 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		04CB5D5B215D6FD000A53906 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				04CB5D5C215D6FD000A53906 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		04CB5D8A215D70A700A53906 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				04CB5D8B215D70A700A53906 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		04CB5D75215D6FD000A53906 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		04CB5D76215D6FD000A53906 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		04CB5D78215D6FD000A53906 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 31976003739FD891B0BE52ED /* Pods-BonjourDev.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = BonjourDev/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = study.BonjourDev;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Model/IPChecker/BonjourDev-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		04CB5D79215D6FD000A53906 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 611C34BD7E68169DCC605017 /* Pods-BonjourDev.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = BonjourDev/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = study.BonjourDev;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Model/IPChecker/BonjourDev-Bridging-Header.h";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		04CB5D7B215D6FD000A53906 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C30312434F42C5BDB46D2945 /* Pods-BonjourDevTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = BonjourDevTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = study.BonjourDevTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BonjourDev.app/BonjourDev";
+			};
+			name = Debug;
+		};
+		04CB5D7C215D6FD000A53906 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3EB4A019922295B5DF557387 /* Pods-BonjourDevTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = BonjourDevTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = study.BonjourDevTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BonjourDev.app/BonjourDev";
+			};
+			name = Release;
+		};
+		04CB5D7E215D6FD000A53906 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 41C1D847D4E1BAACBB6089D5 /* Pods-BonjourDevUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = BonjourDevUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = study.BonjourDevUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = BonjourDev;
+			};
+			name = Debug;
+		};
+		04CB5D7F215D6FD000A53906 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D624E253949A3D214D5E06B2 /* Pods-BonjourDevUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = BonjourDevUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = study.BonjourDevUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = BonjourDev;
+			};
+			name = Release;
+		};
+		04CB5DA7215D70A800A53906 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A94A5F9F8D3BF29860BAC44F /* Pods-BonjourDev-TV.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "BonjourDev-TV/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "study.BonjourDev-TV";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_OBJC_BRIDGING_HEADER = "Model/IPChecker/BonjourDev-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 11.4;
+			};
+			name = Debug;
+		};
+		04CB5DA8215D70A800A53906 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3E0FE614E1E8085CF3552C7E /* Pods-BonjourDev-TV.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "BonjourDev-TV/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "study.BonjourDev-TV";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_OBJC_BRIDGING_HEADER = "Model/IPChecker/BonjourDev-Bridging-Header.h";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 11.4;
+			};
+			name = Release;
+		};
+		04CB5DAA215D70A800A53906 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BDA3E5BD1A5411EEFC109273 /* Pods-BonjourDev-TVTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "BonjourDev-TVTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "study.BonjourDev-TVTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BonjourDev-TV.app/BonjourDev-TV";
+				TVOS_DEPLOYMENT_TARGET = 11.4;
+			};
+			name = Debug;
+		};
+		04CB5DAB215D70A800A53906 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B61AF5A90F777FD4EC47E85D /* Pods-BonjourDev-TVTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "BonjourDev-TVTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "study.BonjourDev-TVTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BonjourDev-TV.app/BonjourDev-TV";
+				TVOS_DEPLOYMENT_TARGET = 11.4;
+			};
+			name = Release;
+		};
+		04CB5DAD215D70A800A53906 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BE57AB6FDC86EE49EF409BAC /* Pods-BonjourDev-TVUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NW98L53UM5;
+				INFOPLIST_FILE = "BonjourDev-TVUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "study.BonjourDev-TVUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TEST_TARGET_NAME = "BonjourDev-TV";
+				TVOS_DEPLOYMENT_TARGET = 11.4;
+			};
+			name = Debug;
+		};
+		04CB5DAE215D70A800A53906 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 01A5E93A68CF0E171BD7A79C /* Pods-BonjourDev-TVUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NW98L53UM5;
+				INFOPLIST_FILE = "BonjourDev-TVUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "study.BonjourDev-TVUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TEST_TARGET_NAME = "BonjourDev-TV";
+				TVOS_DEPLOYMENT_TARGET = 11.4;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		04CB5D4A215D6FCE00A53906 /* Build configuration list for PBXProject "BonjourDev" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04CB5D75215D6FD000A53906 /* Debug */,
+				04CB5D76215D6FD000A53906 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		04CB5D77215D6FD000A53906 /* Build configuration list for PBXNativeTarget "BonjourDev" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04CB5D78215D6FD000A53906 /* Debug */,
+				04CB5D79215D6FD000A53906 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		04CB5D7A215D6FD000A53906 /* Build configuration list for PBXNativeTarget "BonjourDevTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04CB5D7B215D6FD000A53906 /* Debug */,
+				04CB5D7C215D6FD000A53906 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		04CB5D7D215D6FD000A53906 /* Build configuration list for PBXNativeTarget "BonjourDevUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04CB5D7E215D6FD000A53906 /* Debug */,
+				04CB5D7F215D6FD000A53906 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		04CB5DA6215D70A800A53906 /* Build configuration list for PBXNativeTarget "BonjourDev-TV" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04CB5DA7215D70A800A53906 /* Debug */,
+				04CB5DA8215D70A800A53906 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		04CB5DA9215D70A800A53906 /* Build configuration list for PBXNativeTarget "BonjourDev-TVTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04CB5DAA215D70A800A53906 /* Debug */,
+				04CB5DAB215D70A800A53906 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		04CB5DAC215D70A800A53906 /* Build configuration list for PBXNativeTarget "BonjourDev-TVUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04CB5DAD215D70A800A53906 /* Debug */,
+				04CB5DAE215D70A800A53906 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 04CB5D47215D6FCE00A53906 /* Project object */;
+}
