@@ -60,7 +60,7 @@ class SearchingViewController: UIViewController {
 //                self.dismiss(animated: false, completion: nil)
         if SocketManager.shared.isConnected {
             self.present(ActionViewController() as UIViewController, animated: false, completion: nil)
-
+            timer.invalidate()
         }
     }
 }

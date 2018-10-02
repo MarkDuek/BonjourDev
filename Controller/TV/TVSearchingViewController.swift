@@ -67,8 +67,8 @@ class TVSearchViewController: UIViewController {
     @objc func changeColorWhenConnected() {
         print("ENTROU")
         if SocketManager.shared.isConnected == true  {
-            print("BDWIHBIWBCI")
-            self.view.backgroundColor = .black
+             self.present(TVActionViewController() as UIViewController, animated: true, completion: nil)
+             timer.invalidate()
         }
     }
     

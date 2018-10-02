@@ -24,7 +24,7 @@ class ActionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         createAll()
-        
+        showThatIsConnected()
     }
     
     //MARK: - Creating Itens
@@ -35,12 +35,15 @@ class ActionViewController: UIViewController {
     func createAll(){
         btn = UIButton(label: "Change Color!", top: 9, controller: self)
         label = UILabel(txt: "Mudar a cor", controller: self)
+        btn.addTarget(self, action: #selector(changeColor), for: .touchUpInside)
         self.view.backgroundColor = .devOrange
         
         
     }
     func showThatIsConnected(){
-        SocketManager.shared.client.send(dictionary: ["isConnected": true])
+        SocketManager.shared.client.send(dictionary: ["isConnected": "true"])
     }
-    
+    @objc func changeColor() {
+        SocketManager.shared.client.send(dictionary: ["color": "change"])
+    }
 }

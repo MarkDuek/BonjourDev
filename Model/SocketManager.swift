@@ -18,34 +18,33 @@ class SocketManager {
     var isServer: Bool = false
     var isConnected: Bool = false
     var bonjourDict : [String:String]!
-    ///// MAnager Servidor ////
+    
+    var colorToChange: String!
 }
 extension SocketManager: ServerDelegate {
     
     func setUpServer(name: String) {
-        
         server = Server()
         server.delegate = self
         self.isServer = true
         server.createService(lobbyName: name)
-        
-    }
-    func didCreateServer() {debugPrint(#function)
-        let ip = server.getWiFiAddress()
-        let port = server.port
-        
-        
-        print("tries to connect in Ip: \(ip!)")
-        print("tries to connect in Port: \(port)")
-        
     }
     
-    func didConnectWithServer() {
-        debugPrint(#function)
+    
+    
+    
+    func didCreateServer() {debugPrint(#function)
+        let ip = Bonjour.shared.getWiFiAddress()
+        let port = server.port
+        print("tries to connect in Ip: \(ip!)")
+        print("tries to connect in Port: \(port)")
+    }
+    func didConnectWithServer() {debugPrint(#function)
         isConnected = true
-        
     }
 
+    
+    
     
     //////// Escreve NO socket //////////////
     func writeInSocket(dataDict: [String:Any]) {
@@ -61,19 +60,32 @@ extension SocketManager: ServerDelegate {
                     print(error)
                     print("Couldn't write in socket")
                 }
-                
             } catch let error {
                 print(error)
                 print("Error in conversion of dictionary to Data")
             }
-            
-            
         })
     }
+    
+    
+    
     //// recebe coisas do servidor ////
     func didReceiveServerInfo(receivedDict: [String:Any]) { debugPrint(#function)
-        SocketManager.shared.isConnected = (receivedDict["isConnected"] as! Bool)
+        if let infoReceived = receivedDict["isConnected"] {
+            if infoReceived as! String == "true"{
+                SocketManager.shared.isConnected = true
+            }
+        }
+        if let color = receivedDict["color"] {
+            if color as! String == "change"{
+                SocketManager.shared.colorToChange = "yes"
+            }
+        }
     }
+    
+    
+    
+    
     
     func decodeTxtRecord(toDictionary recordData: Data) -> [String:String] {
         

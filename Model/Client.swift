@@ -9,31 +9,22 @@
 import Foundation
 import Socket
 
-
 class Client: NSObject, NetServiceBrowserDelegate, NetServiceDelegate {
-    
-    var delegate: ClientDelegate!
-    
-    // MARK: - BONJOUR VARIABLES -
-    
-    //    private var serviceServer: NetService!
-    var serviceBrowser: NetServiceBrowser!
-    var servicesArray: NSMutableArray!
     
     // MARK: - SOCKET VARIABLES -
     
     var socket: Socket!
     static let bufferSize = 100000000
     
-    ///////========== Client ==========////////
-    func searchForServerClient() {
-        Bonjour.shared.searchForServer(client: delegate)
-    }
+    var delegate: ClientDelegate!
+    
     // MARK: - SOCKET METHODS -
     //
     // ===================== SOCKET METHODS ================================
     //
-    
+    func searchForServerClient() {
+        Bonjour.shared.searchForServer(client: delegate)
+    }
     /// Tries to connect with a server with the ip and port
     ///
     /// - Parameters:
@@ -115,7 +106,7 @@ class Client: NSObject, NetServiceBrowserDelegate, NetServiceDelegate {
     /// - Parameter data: Data you want to send
     func send(dictionary: [String: Any]){
         
-        print(dictionary)
+        debugPrint("SENDING ====>",dictionary)
         
         let data: Data
         

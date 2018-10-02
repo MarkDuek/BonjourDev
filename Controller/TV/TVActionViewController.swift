@@ -18,10 +18,31 @@ import UIKit
 
 class TVActionViewController: UIViewController {
     var backGroundColor: UIColor!
-    
+    var timer: Timer!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .black
+        
+        //creating timer
+        timer = Timer.scheduledTimer(timeInterval: 0.3, target: self, selector: #selector(changeColor), userInfo: nil, repeats: true)
     }
-
+    @objc func changeColor() {
+        if SocketManager.shared.colorToChange == "yes" {
+            switch self.view.backgroundColor {
+            case UIColor.black:
+                forceTheChange(color: UIColor.orange)
+            case UIColor.orange:
+                forceTheChange(color: UIColor.blue)
+            case UIColor.blue:
+                forceTheChange(color: UIColor.black)
+            default:
+                print("Nothing Happends")
+            }
+        }
+        SocketManager.shared.colorToChange = "NotChange"
+    }
+    func forceTheChange(color: UIColor){
+        self.view.backgroundColor = color
+        self.reloadInputViews()
+    }
 }

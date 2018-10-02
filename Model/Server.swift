@@ -13,26 +13,29 @@ class Server: NSObject, NetServiceDelegate {
     
     var delegate: ServerDelegate?
     
-    // MARK: - BONJOUR VARIABLES -
-    
-    var serviceServer: NetService!
-    
     // MARK: - SOCKET VARIABLES -
-    
     var socket: Socket!
     var clientSockets: [Socket] = []
     var serverIsRunning = true
-    
+    var port: Int!
     static let bufferSize = 409600
     
-    // ToDo: Pegar porta aleatoria
-    var port: Int!
+    
+    
+    
+    
+    
+    // MARK: - BONJOUR VARIABLES -
+    
+    var serviceServer: NetService!
     
     deinit {
         socket = nil
         clientSockets = []
         serverIsRunning = true
     }
+    
+    
     /// Create a bonjour Service
     ///
     /// - Parameter lobbyName: Name of the lobby
@@ -52,6 +55,11 @@ class Server: NSObject, NetServiceDelegate {
             Bonjour.shared.didPublishBonjour(netService: serviceServer)
         }
     }
+    
+    
+    
+    
+    
     // MARK: - SOCKET METHODS -
     //
     // ===================== SOCKET METHODS ================================
@@ -106,6 +114,14 @@ class Server: NSObject, NetServiceDelegate {
         }
     }
     
+    
+    
+    
+    
+    
+    
+    
+    
     func addNewConnection(clientSocket: Socket) {
         
         // Adding the new client to the array
@@ -158,49 +174,6 @@ class Server: NSObject, NetServiceDelegate {
             } while isRunning
         }
         
-    }
-    
-    // MARK: - OTHER METHODS -
-    //
-    // ===================== OTHER METHODS ================================
-    //
-    
-    
-    /// Function responsable to pass the IP address of the device
-    ///
-    /// - Returns: IP address of the connected wifi as a String or 'nil'
-    func getWiFiAddress() -> String? {
-        var address : String?
-        
-        // Get list of all interfaces on the local machine:
-        var ifaddr : UnsafeMutablePointer<ifaddrs>?
-        guard getifaddrs(&ifaddr) == 0 else { return nil }
-        guard let firstAddr = ifaddr else { return nil }
-        
-        // For each interface ...
-        for ifptr in sequence(first: firstAddr, next: { $0.pointee.ifa_next }) {
-            let interface = ifptr.pointee
-            
-            // Check for IPv4 or IPv6 interface:
-            let addrFamily = interface.ifa_addr.pointee.sa_family
-            if addrFamily == UInt8(AF_INET) || addrFamily == UInt8(AF_INET6) {
-                
-                // Check interface name:
-                let name = String(cString: interface.ifa_name)
-                if  name == "en0" {
-                    
-                    // Convert interface address to a human readable string:
-                    var hostname = [CChar](repeating: 0, count: Int(NI_MAXHOST))
-                    getnameinfo(interface.ifa_addr, socklen_t(interface.ifa_addr.pointee.sa_len),
-                                &hostname, socklen_t(hostname.count),
-                                nil, socklen_t(0), NI_NUMERICHOST)
-                    address = String(cString: hostname)
-                }
-            }
-        }
-        freeifaddrs(ifaddr)
-        
-        return address
     }
     
     /// Close one of the sockets
