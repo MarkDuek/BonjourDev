@@ -15,8 +15,6 @@ import UIKit
  - Version: 0.1 Plus Ultra
  - Important: Nothing at all
  */
-
-
 class SearchingViewController: UIViewController {
     var label: UILabel!
     var timer : Timer!

@@ -9,14 +9,26 @@
 import Foundation
 import Socket
 
-class Client: NSObject, NetServiceBrowserDelegate, NetServiceDelegate {
+/**
+  Class that have all methods from client side
+ */
+class Client: NSObject {
     
     // MARK: - SOCKET VARIABLES -
     
     var socket: Socket!
     static let bufferSize = 100000000
     
+    
+    
+    
+    // MARK: - CLIENT DELEGATE -
+    
     var delegate: ClientDelegate!
+    
+    
+    
+    
     
     // MARK: - SOCKET METHODS -
     //
@@ -32,7 +44,7 @@ class Client: NSObject, NetServiceBrowserDelegate, NetServiceDelegate {
     ///   - port: Int that represents the port you want to connect
     func connect(ip: String, port: Int) {
         
-        // Creates a new socket
+        // Creates a new socket/Users/rodrigobukowitz/Desktop/Socket_Bonjour_Parte_Client.m4v
         do {
             
             try socket = Socket.create(family: .inet)
@@ -166,7 +178,7 @@ protocol ClientDelegate {
     /// - Parameter newData: the new text record of the service
     func didUpdateTxtRecord(newData: Data)
     
-    /// Called when the service that
+    /// Called when the service that was connected was lost
     ///
     /// - Parameter netService: x
     func didLostService(netService: NetService)

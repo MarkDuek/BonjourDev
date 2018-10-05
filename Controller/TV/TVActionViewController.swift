@@ -30,10 +30,8 @@ class TVActionViewController: UIViewController {
         if SocketManager.shared.colorToChange == "yes" {
             switch self.view.backgroundColor {
             case UIColor.black:
-                forceTheChange(color: UIColor.orange)
-            case UIColor.orange:
-                forceTheChange(color: UIColor.blue)
-            case UIColor.blue:
+                forceTheChange(color: UIColor.devOrange)
+            case UIColor.devOrange:
                 forceTheChange(color: UIColor.black)
             default:
                 print("Nothing Happends")

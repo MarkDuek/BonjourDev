@@ -11,23 +11,42 @@ import Socket
 
 class Server: NSObject, NetServiceDelegate {
     
-    var delegate: ServerDelegate?
+    
     
     // MARK: - SOCKET VARIABLES -
     var socket: Socket!
     var clientSockets: [Socket] = []
     var serverIsRunning = true
     var port: Int!
-    static let bufferSize = 409600
-    
-    
-    
-    
+    static let bufferSize = 100000000
     
     
     // MARK: - BONJOUR VARIABLES -
     
     var serviceServer: NetService!
+    
+    
+    
+    
+    
+    // MARK: -  Server Delegate  -
+    
+    var delegate: ServerDelegate?
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
     
     deinit {
         socket = nil
@@ -45,7 +64,7 @@ class Server: NSObject, NetServiceDelegate {
         serviceServer = NetService(domain: "", type: "_testeDevPlusUltra._tcp", name: lobbyName, port: 2023)
         
         port = serviceServer.port
-        print(port)
+        debugPrint(port)
         runServer(port: port)
         
         if let serviceServer = serviceServer {

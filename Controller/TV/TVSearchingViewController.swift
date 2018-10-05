@@ -23,7 +23,6 @@ class TVSearchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("Rodrigo")
         SocketManager.shared.setUpServer(name: "testeDevPlusUltra")
         createAll()
     }
