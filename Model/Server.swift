@@ -30,7 +30,7 @@ class Server: NSObject, NetServiceDelegate {
     
     var serviceServer: NetService!
     
-    //MARK: Server Delegate Properties
+    //MARK: Server Delegate Propertie
     
     var delegate: ServerDelegate?
     
