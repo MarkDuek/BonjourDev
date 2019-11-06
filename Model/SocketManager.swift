@@ -49,8 +49,8 @@ extension SocketManager: ServerDelegate {
     func didCreateServer() {debugPrint(#function)
         let ip = Bonjour.shared.getWiFiAddress()
         let port = server.port
-        debugPrint("tries to connect in Ip: \(ip!)")
-        debugPrint("tries to connect in Port: \(String(describing: port))")
+        debugPrint("Tries to connect with Ip: \(ip!)")
+        debugPrint("Tries to connect to Port: \(String(describing: port))")
     }
     /**
         Essa função muda a bool para verdadeiro quando alguém conecta

@@ -9,28 +9,60 @@
 import Foundation
 import Socket
 
-class Bonjour: NSObject, NetServiceBrowserDelegate, NetServiceDelegate {
+///Bonjour Service blueprint of methods
+protocol BonjourService {
     
-    static var shared: Bonjour = Bonjour()
+    var serviceBrowser: NetServiceBrowser { get }
+    var servicesArray: NSMutableArray   { get }
+    var clientDelegate: ClientDelegate?  { get }
+    var serverDelegate: ServerDelegate?  { get }
     
-    var serviceBrowser: NetServiceBrowser!
-    var servicesArray: NSMutableArray!
-    var clientDelegate: ClientDelegate!
-    var serverDelegate: ServerDelegate!
-    var serverService: NetService!
+    /**
+     Resolves given service in a TimeInterval, when done the delagate function AddressResolved will be called.
 
-    var jsonObject: [String:String]!
+        - Parameters:
+            - service: NetService you want to resolve.
+            - timeout: TImeInterval the function as to resolve the given service.
+     */
+    func resolveService(_ service: NetService, with timeout: TimeInterval)
+
+    func netServiceBrowser(_ browser: NetServiceBrowser, didFind service: NetService, moreComing: Bool)
+
+    func netServiceDidResolveAddress(_ sender: NetService)
+
+    func netService(_ sender: NetService, didNotResolve errorDict: [String : NSNumber])
+
+    func netService(_ sender: NetService, didUpdateTXTRecord data: Data)
+}
+
+//MARK: - Declaration
+
+///
+class Bonjour: NSObject, NetServiceBrowserDelegate, NetServiceDelegate, BonjourService {
+   
+    static var shared: Bonjour = Bonjour()
+
+    //MARK: - Properties
     
-//    func ConectWithBonjour(service: NetService ) {
-//        serverService = service
-//        serverService.delegate = self
-//        serverService.publish()
-//    }
+    var jsonObject: [String:String]!
+
+    //MARK: BonjourService Properties
+    
+    var serviceBrowser = NetServiceBrowser()
+    
+    var servicesArray: NSMutableArray = []
+    
+    var clientDelegate: ClientDelegate?
+    
+    var serverDelegate: ServerDelegate?
+    
+    //MARK: - Primary Functions
     
     func searchForServer(client: ClientDelegate){
         clientDelegate = client
+        
         // Empty the array of services
-        if servicesArray != nil {
+        if servicesArray != [] {
             servicesArray.removeAllObjects()
         } else {
             servicesArray = NSMutableArray()
@@ -40,49 +72,38 @@ class Bonjour: NSObject, NetServiceBrowserDelegate, NetServiceDelegate {
         serviceBrowser.delegate = self
         
         // Starts the search for servers
-        
         let bonjourName = "_testeDevPlusUltra._tcp"
-        print("procurando por bonjour: \(bonjourName)")
+        debugPrint("Bonjour: Looking for bonjour: \(bonjourName)")
         
         serviceBrowser.searchForServices(ofType: bonjourName, inDomain: "")
     }
-    
-    ///////========== Bounjour Methods ==============///////
-    
-    /// Function of the delegate that is called everytime a server is found
-    ///
-    /// - Parameters:
-    ///   - browser:
-    ///   - service: Server Found
-    ///   - moreComing:
-    func netServiceBrowser(_ browser: NetServiceBrowser, didFind service: NetService, moreComing: Bool) {
-        print("browser: Did find service")
-        
-        // Adding service to the array of services
-        servicesArray.add(service)
-        service.delegate = self
-        
-        // Calls the serviceFound delegate function
-        self.clientDelegate?.serviceFound(service: service)
-    }
-    
-    /// Resolves a given service in 10 seconds maximum when done the delagate function AddressResolved will be called
-    ///
-    /// - Parameter service: Service to resolve
+
+    //MARK: - Bonjour Methods
+
     func resolveService(_ service: NetService, with timeout: TimeInterval){
         
         // Tries to resolve a service
         service.resolve(withTimeout: timeout)
     }
     
-    /// Function called when the address is resolved
-    ///
-    /// - Parameter sender: Service of the server
-    func netServiceDidResolveAddress(_ sender: NetService) {
-        print("did resolve address")
+    func netServiceBrowser(_ browser: NetServiceBrowser, didFind service: NetService, moreComing: Bool) {
+          
+        // Adding service to the array of services
+        servicesArray.add(service)
+        service.delegate = self
         
-        // calls delegate passing the resolved NetService
+        // Calls the serviceFound delegate function
+        self.clientDelegate?.serviceFound(service: service)
+        
+        debugPrint("Bonjour: Browser found service")
+      }
+    
+    func netServiceDidResolveAddress(_ sender: NetService) {
+        
+        // Calls delegate passing the resolved NetService
         self.clientDelegate?.didResolveService(resolvedNetService: sender)
+
+        debugPrint("Bonjour: Did resolve address")
     }
     
     func netService(_ sender: NetService, didNotResolve errorDict: [String : NSNumber]) {
@@ -95,11 +116,10 @@ class Bonjour: NSObject, NetServiceBrowserDelegate, NetServiceDelegate {
         self.clientDelegate?.didUpdateTxtRecord(newData: data)
     }
     
-    // MARK: - Net Service delegates -
-    //
-    // ===================== NET SERVICE DELEGATES ================================
-    //
-    ////////// ========== Server ========= ///////////////
+    //MARK: - Net Service delegates
+    
+    // Server
+    
     func didPublishBonjour(netService: NetService) {debugPrint(#function)
         
         print("Printando as informacoes do txtRecord")
@@ -129,12 +149,8 @@ class Bonjour: NSObject, NetServiceBrowserDelegate, NetServiceDelegate {
         
         self.serverDelegate?.didPublishBonjour(netService: sender)
     }
-    // MARK: - OTHER METHODS -
-    //
-    // ===================== OTHER METHODS ================================
-    //
-    
-    
+    // MARK: - Other Methods
+
     /// Function responsable to pass the IP address of the device
     ///
     /// - Returns: IP address of the connected wifi as a String or 'nil'

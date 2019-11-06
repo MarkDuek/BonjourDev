@@ -9,44 +9,32 @@
 import Foundation
 import Socket
 
+/// NSObject Server class that conforms to NetServiceDelegate
 class Server: NSObject, NetServiceDelegate {
     
+    //MARK: - Properties
     
+    //MARK: Socket Properties
     
-    // MARK: - SOCKET VARIABLES -
+    ///Server socket
     var socket: Socket!
+    ///Clients sockets
     var clientSockets: [Socket] = []
+    ///Server running verifier
     var serverIsRunning = true
+    ///Server port
     var port: Int!
     static let bufferSize = 100000000
     
-    
-    // MARK: - BONJOUR VARIABLES -
+    //MARK: Bonjour Properties
     
     var serviceServer: NetService!
     
-    
-    
-    
-    
-    // MARK: -  Server Delegate  -
+    //MARK: Server Delegate Properties
     
     var delegate: ServerDelegate?
     
-    
-    
-    
-    
-    
-
-    
-    
-    
-    
-    
-    
-    
-    
+    //MARK: - Deinit
     
     deinit {
         socket = nil
@@ -54,17 +42,18 @@ class Server: NSObject, NetServiceDelegate {
         serverIsRunning = true
     }
     
+    //MARK: - Methods
     
-    /// Create a bonjour Service
-    ///
-    /// - Parameter lobbyName: Name of the lobby
+    /**
+     Creates and publish a bonjour Service.
+      
+        - Parameter lobbyName: Name of the lobby
+     */
     func createService(lobbyName: String){
         
-        // TODO: create a random port
         serviceServer = NetService(domain: "", type: "_testeDevPlusUltra._tcp", name: lobbyName, port: 2023)
         
         port = serviceServer.port
-        debugPrint(port)
         runServer(port: port)
         
         if let serviceServer = serviceServer {
@@ -73,20 +62,16 @@ class Server: NSObject, NetServiceDelegate {
             serviceServer.publish()
             Bonjour.shared.didPublishBonjour(netService: serviceServer)
         }
+        
+        debugPrint("Server: Service \(serviceServer.name) created and published.")
+        debugPrint("Server:", "Service information", "Domain: \(serviceServer.domain)", "Type: \(serviceServer.type) ","Name: \(serviceServer.name)", "Port: \(serviceServer.port)", separator: "\n")
     }
-    
-    
-    
-    
-    
-    // MARK: - SOCKET METHODS -
-    //
-    // ===================== SOCKET METHODS ================================
-    //
-    
-    /// Creates a socket and a Thread to listen the port for new clients to connect. Calling the function addNewConnection when found
-    ///
-    /// - Parameter port: The port in which the server will listen
+        
+    /**
+    Creates a socket and a Thread to listen to the port for new clients to connect. Calling the function addNewConnection when found.
+     
+     - Parameter port: The port to which the server will listen.
+     */
     func runServer(port: Int){
         
         self.port = port
@@ -96,18 +81,19 @@ class Server: NSObject, NetServiceDelegate {
             try self.socket = Socket.create(family: .inet)
             
         } catch let error {
-            print (error)
-            print("Can`t create socket")
+            debugPrint("Couldn`t create socket")
+            debugPrint (error)
+
             return
         }
         
-        // abrindo porta para conexão
+        // Opening port for connection
         do {
             try self.socket.listen(on: self.port)
-            print("Listening on port: \(self.socket.listeningPort)")
+            debugPrint("Listening on port: \(self.socket.listeningPort)")
         } catch let error {
-            print(error)
-            print("Can`t listen on port: \(self.port)")
+            debugPrint("Can`t listen to port: \(self.port)")
+            debugPrint(error)
             return
         }
         
@@ -133,14 +119,11 @@ class Server: NSObject, NetServiceDelegate {
         }
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
+    /**
+     Connects a new client socket to the server.
+     
+     - Parameter clientSocket: Socket of the client you want to connect.
+     */
     func addNewConnection(clientSocket: Socket) {
         
         // Adding the new client to the array
@@ -158,7 +141,7 @@ class Server: NSObject, NetServiceDelegate {
                 
                 // If socket has been disconnected the thread must stop
                 if !clientSocket.isConnected {
-                    print("Disconnected")
+                    debugPrint("Server: Socket was disconnected while trying")
                     
                     isRunning = false
                     return
@@ -167,7 +150,7 @@ class Server: NSObject, NetServiceDelegate {
                 do {
                     let bytesRead = try clientSocket.read(into: &readData)
                     
-                    print("\n\n\nSERVER WILL SEND \(readData)\n\n\n")
+                    debugPrint("Server: Will send: \(readData)")
                     // If there was a new message to be read
                     if bytesRead > 0 {
                         
@@ -180,13 +163,13 @@ class Server: NSObject, NetServiceDelegate {
                             readData.count = 0
                             
                         } catch let error {
-                            print(error)
-                            print("Something went wrong when decoding data")
+                            debugPrint("Something went wrong when decoding data")
+                            debugPrint(error)
                         }
                     }
                 } catch let error {
-                    print(error)
-                    print("Server were unable to read \(clientSocket.remoteHostname)")
+                    debugPrint("Server: Unable to read \(clientSocket.remoteHostname)")
+                    debugPrint(error)
                     return
                 }
                 
@@ -195,18 +178,23 @@ class Server: NSObject, NetServiceDelegate {
         
     }
     
-    /// Close one of the sockets
-    ///
-    /// - Parameters:
-    ///   - socket: the socket that must be closed
-    ///   - index: index of the socket that must be closed
+    /**
+     Close one of the sockets
+
+        - Parameters:
+            - socket: the socket that must be closed
+            - index: index of the socket that must be closed
+     */
     func closeIndividualSocket(_ socket: Socket, index: Int) {
         clientSockets.remove(at: index)
         socket.close()
     }
     
     
-    /// Close all sockets connected to the socket removes all sockets from the array of sockets and close the server Scoket
+    /**
+     Close all sockets connected to the socket removes all sockets from the array of sockets and close the server Scoket
+ 
+     */
     func closeServerSockets(){
         
         debugPrint(#function)
@@ -221,22 +209,26 @@ class Server: NSObject, NetServiceDelegate {
 }
 
 protocol ServerDelegate {
+    /**
+    Called every time the server receives a message. It already makes the decoding to a dictionary of [String:Any]
     
-    /// Called every time the server receives a message. It already makes the decoding to a dictionary of [String:Any]
-    ///
-    /// - Parameter receivedDict: Data received already decoded
+    - Parameter receivedDict: Data received already decoded
+    */
     func didReceiveServerInfo(receivedDict: [String:Any])
     
-    /// Called when the bonjour has been published
+    /**
+    Called when the bonjour has been published. Prints Bonjour and NetService informations.
+    
+     -  Parameter netService: NetSerice that will be published.
+    */
     func didPublishBonjour(netService: NetService)
     
+    /**
+    Called when the server has been created. Prints Server informations.
+      
+    */
     func didCreateServer()
 }
-
-// Did find new client
-//
-//
-//
 
 extension ServerDelegate {
     

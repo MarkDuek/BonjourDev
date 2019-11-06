@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CC0471CEF5F51486466D628BB1D3CFA3"
+               BlueprintIdentifier = "035103FC0B55C6E6469E300EED81715D"
                BuildableName = "Pods_BonjourDevUITests.framework"
                BlueprintName = "Pods-BonjourDevUITests"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -29,8 +29,6 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
-      <AdditionalOptions>
-      </AdditionalOptions>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
@@ -42,17 +40,6 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "CC0471CEF5F51486466D628BB1D3CFA3"
-            BuildableName = "Pods_BonjourDevUITests.framework"
-            BlueprintName = "Pods-BonjourDevUITests"
-            ReferencedContainer = "container:Pods.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
-      <AdditionalOptions>
-      </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
