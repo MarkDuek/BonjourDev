@@ -144,7 +144,7 @@ class Client: NSObject {
     }
     
     /**
-    Closes client socket.
+    Closes client socket.Polynesian
     */
     func closeClientSocket() {
         socket.close()

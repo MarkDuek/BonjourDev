@@ -9,7 +9,7 @@
 import Foundation
 import Socket
 
-/// NSObject Server class that conforms to NetServiceDelegate
+///NSObject Server class that conforms to NetServiceDelegate
 class Server: NSObject, NetServiceDelegate {
     
     //MARK: - Properties

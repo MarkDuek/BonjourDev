@@ -37,7 +37,7 @@ protocol BonjourService {
 
 //MARK: - Declaration
 
-///
+///Class in charge of publishing and discovering services on the network.
 class Bonjour: NSObject, NetServiceBrowserDelegate, NetServiceDelegate, BonjourService {
    
     static var shared: Bonjour = Bonjour()
@@ -56,7 +56,7 @@ class Bonjour: NSObject, NetServiceBrowserDelegate, NetServiceDelegate, BonjourS
     
     var serverDelegate: ServerDelegate?
     
-    //MARK: - Primary Functions
+    //MARK: - Methods
     
     func searchForServer(client: ClientDelegate){
         clientDelegate = client
@@ -122,9 +122,9 @@ class Bonjour: NSObject, NetServiceBrowserDelegate, NetServiceDelegate, BonjourS
     
     func didPublishBonjour(netService: NetService) {debugPrint(#function)
         
-        print("Printando as informacoes do txtRecord")
-        print(IPChecker.getIP())
-        print(String(netService.port))
+        debugPrint("txt Record Information")
+        debugPrint(IPChecker.getIP())
+        debugPrint(String(netService.port))
         
         jsonObject = [
             "State": "aguardando",
@@ -149,6 +149,7 @@ class Bonjour: NSObject, NetServiceBrowserDelegate, NetServiceDelegate, BonjourS
         
         self.serverDelegate?.didPublishBonjour(netService: sender)
     }
+
     // MARK: - Other Methods
 
     /// Function responsable to pass the IP address of the device
