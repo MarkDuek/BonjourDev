@@ -33,6 +33,7 @@ To use the main features of the Socket we use an Pod called BlueSocket.
 So you will need to install cocoa pods in your repository.
 
 You can see more in...
+
 [CocoaPods](https://cocoapods.org/)
 [BlueSocket](https://github.com/IBM-Swift/BlueSocket)
 
