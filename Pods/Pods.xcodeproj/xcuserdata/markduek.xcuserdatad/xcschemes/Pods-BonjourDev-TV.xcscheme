@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "DE7A576D966898A6CCE2CA44B02BBC06"
+               BlueprintIdentifier = "AC760E66D49DDFCB7BDB744BF8DDC4E6"
                BuildableName = "Pods_BonjourDev_TV.framework"
                BlueprintName = "Pods-BonjourDev-TV"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -29,8 +29,6 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
-      <AdditionalOptions>
-      </AdditionalOptions>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
@@ -42,17 +40,6 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "DE7A576D966898A6CCE2CA44B02BBC06"
-            BuildableName = "Pods_BonjourDev_TV.framework"
-            BlueprintName = "Pods-BonjourDev-TV"
-            ReferencedContainer = "container:Pods.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
-      <AdditionalOptions>
-      </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"

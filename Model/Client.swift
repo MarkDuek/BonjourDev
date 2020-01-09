@@ -9,39 +9,36 @@
 import Foundation
 import Socket
 
-/**
-  Class that have all methods from client side
- */
+///Class that have all methods from client side.
 class Client: NSObject {
     
-    // MARK: - SOCKET VARIABLES -
+    //MARK: - Properties
     
+    ///Client Socket
     var socket: Socket!
     static let bufferSize = 100000000
-    
-    
-    
-    
-    // MARK: - CLIENT DELEGATE -
+
+    //MARK: Client Delegate Propertie
     
     var delegate: ClientDelegate!
-    
-    
-    
-    
-    
-    // MARK: - SOCKET METHODS -
-    //
-    // ===================== SOCKET METHODS ================================
-    //
+
+    //MARK: - Methods
+ 
+    /**
+        Searches for a server.
+     */
     func searchForServerClient() {
         Bonjour.shared.searchForServer(client: delegate)
     }
-    /// Tries to connect with a server with the ip and port
-    ///
-    /// - Parameters:
-    ///   - ip: String that represents the ip you want to connect
-    ///   - port: Int that represents the port you want to connect
+    
+    /**
+    Tries to connect with a server using an ip and port.
+    
+    - Parameters:
+      - ip: String that represents the ip you want to connect
+      - port: Int that represents the port you want to connect
+ 
+     */
     func connect(ip: String, port: Int) {
         
         // Creates a new socket/Users/rodrigobukowitz/Desktop/Socket_Bonjour_Parte_Client.m4v
@@ -49,8 +46,9 @@ class Client: NSObject {
             
             try socket = Socket.create(family: .inet)
         } catch let error {
-            print(error)
-            print("Can`t create socket")
+            debugPrint("Client: Can`t create socket")
+            debugPrint(error)
+
             return
         }
         
@@ -61,8 +59,9 @@ class Client: NSObject {
             self.delegate?.didConnectWithServer()
             
         } catch let error {
-            print(error)
-            print("Can`t connect to given server")
+            debugPrint("Client: Can`t connect to given server")
+            debugPrint(error)
+
             return
         }
         
@@ -78,7 +77,7 @@ class Client: NSObject {
                 
                 // If socket has been disconnected the thread must stop
                 if !self.socket.isConnected {
-                    print("Disconnected")
+                    debugPrint("Client: Disconnected")
                     
                     isRunning = false
                     return
@@ -98,27 +97,29 @@ class Client: NSObject {
                             readData.count = 0
                             
                         } catch let error {
+                            debugPrint("Client: Could not decode Data")
                             print(error)
-                            print("Could not decode Data")
                             
                         }
                     }
                 } catch let error {
-                    print(error)
-                    print("Can`t read server")
+                    debugPrint("Client: Can`t read server")
+                    debugPrint(error)
+
                 }
                 
             } while isRunning
         }
     }
     
-    
-    /// Sending data to the server
-    ///
-    /// - Parameter data: Data you want to send
+    /**
+    Sending data to the server.
+        
+    - Parameter data: Data you want to send
+    */
     func send(dictionary: [String: Any]){
         
-        debugPrint("SENDING ====>",dictionary)
+        debugPrint("Client: Sending:",dictionary)
         
         let data: Data
         
@@ -126,9 +127,9 @@ class Client: NSObject {
         do {
             data = try JSONSerialization.data(withJSONObject: dictionary, options: .prettyPrinted)
         } catch let error {
-            print(error)
-            print("Can`t convert to data")
-            
+            debugPrint("Client: Can`t convert to data")
+            debugPrint(error)
+
             return
         }
         
@@ -136,51 +137,67 @@ class Client: NSObject {
         do {
             try socket.write(from: data)
         } catch let error {
-            print(error)
-            print("Wasn't able to write")
+            debugPrint("Client: Wasn't able to write")
+            debugPrint(error)
+
         }
     }
     
-    
-    /// Close client socket
+    /**
+    Closes client socket.Polynesian
+    */
     func closeClientSocket() {
         socket.close()
     }
 }
 
-// MARK: - CLIENTDELEGATE -
+// MARK: - Client Delegate
 
 protocol ClientDelegate {
-    
-    /// Called when the client connects with the server
+    /**
+    Called when the client connects with the server.
+     
+    */
     func didConnectWithServer()
     
-    /// Called every time the client receives a message. It already makes the decoding to a dictionary of [String:Any]
-    ///
-    /// - Parameter receivedDict: Data received already decoded
+    /**
+    Called every time the client receives a message. It already makes the decoding to a dictionary of [String:Any]
+
+    - Parameter receivedDict: Data received already decoded
+    */
     func didReceiveClientInfo(receivedDict: [String:Any])
     
-    /// Called when a bonjour service has been found
+    /**
+    Called when a bonjour service has been found
+ 
+     - Parameter netService: Service that was found
+
+    */
     func serviceFound(service: NetService)
     
-    /// Called when the service is resolved
-    ///
-    /// - Parameter resolvedNetService: the resolved service
+    /**
+    Called when the service is resolved
+
+    - Parameter resolvedNetService: The resolved service
+    */
     func didResolveService(resolvedNetService: NetService)
-    
-    /// Called when the resolve method failed
-    ///
-    /// - Parameter netService: the unresolved service
+    /**
+    Called when the resolve method failed
+
+    - Parameter netService: The unresolved service
+     */
     func didNotResolveService(netService: NetService)
-    
-    /// Called when the text Record was changed
-    ///
-    /// - Parameter newData: the new text record of the service
+    /**
+    Called when the text Record was changed
+
+    - Parameter newData: New text record of the service
+     */
     func didUpdateTxtRecord(newData: Data)
-    
-    /// Called when the service that was connected was lost
-    ///
-    /// - Parameter netService: x
+    /**
+    Called when the service that was connected was lost.
+
+    - Parameter netService: Service that was lost.
+     */
     func didLostService(netService: NetService)
 }
 

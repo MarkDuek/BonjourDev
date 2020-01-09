@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		044911802162932900EA2CCC /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0449117F2162932900EA2CCC /* Reachability.swift */; };
+		045E407C23735EAF0027FBC5 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045E407B23735EAF0027FBC5 /* Protocols.swift */; };
 		04B1923421629B68000716DB /* IPChecker.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B1923221629B68000716DB /* IPChecker.m */; };
 		04B1923521629B68000716DB /* IPChecker.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B1923221629B68000716DB /* IPChecker.m */; };
 		04B192392162A38B000716DB /* SocketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CB5DC0215D724500A53906 /* SocketManager.swift */; };
@@ -80,6 +81,7 @@
 /* Begin PBXFileReference section */
 		01A5E93A68CF0E171BD7A79C /* Pods-BonjourDev-TVUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BonjourDev-TVUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BonjourDev-TVUITests/Pods-BonjourDev-TVUITests.release.xcconfig"; sourceTree = "<group>"; };
 		0449117F2162932900EA2CCC /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		045E407B23735EAF0027FBC5 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		04B1923121629B67000716DB /* BonjourDev-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BonjourDev-Bridging-Header.h"; sourceTree = "<group>"; };
 		04B1923221629B68000716DB /* IPChecker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPChecker.m; sourceTree = "<group>"; };
 		04B1923321629B68000716DB /* IPChecker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPChecker.h; sourceTree = "<group>"; };
@@ -358,6 +360,7 @@
 			isa = PBXGroup;
 			children = (
 				04CB5DCE215D783300A53906 /* UIExtension.swift */,
+				045E407B23735EAF0027FBC5 /* Protocols.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -775,6 +778,7 @@
 				04B1923421629B68000716DB /* IPChecker.m in Sources */,
 				04CB5DD4215D7E3C00A53906 /* UIExtension.swift in Sources */,
 				04CB5D55215D6FCE00A53906 /* MenuViewController.swift in Sources */,
+				045E407C23735EAF0027FBC5 /* Protocols.swift in Sources */,
 				04CB5D53215D6FCE00A53906 /* AppDelegate.swift in Sources */,
 				04CB5DD9215D926000A53906 /* SearchingViewController.swift in Sources */,
 				04CB5DBD215D720400A53906 /* Server.swift in Sources */,

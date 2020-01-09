@@ -8,70 +8,75 @@
 
 import Foundation
 import Socket
-/**
- Essa Classe gerencia as informações do Socket
- - Author: Mark Duek
- - Version: 0.1 Plus Ultra
- */
+
+/// This Class manages socket information.
 class SocketManager {
-    //MARK: - Constantes e variaveis
-    /**
-     this constant is a singleton
- */
+    //MARK: - Properties
+    
+    ///SocketManager singleton
     static let shared: SocketManager = SocketManager()
     
     var server: Server!
     var client: Client!
+    
+    ///Verifies if server is on.
     var isServer: Bool = false
+    ///Verify if someone is connected to the server.
     var isConnected: Bool = false
+    
     var bonjourDict : [String:String]!
     
     var colorToChange: String!
 }
-    //MARK: - SocketManager extension para o servidor
+
+//MARK: - SocketManager extension for the server
+
 extension SocketManager: ServerDelegate {
     
-    //MARK: - Metodos do servidor
+    //MARK: Server Methods
     /**
-     Cria um servidor e o bota para funcionar.
+     Initizlizes Server.
      - Parameters:
-        - name: String que da o nome para o serviço
- */
+        - name: Server name String.
+     */
     func setUpServer(name: String) {
         server = Server()
         server.delegate = self
         self.isServer = true
         server.createService(lobbyName: name)
     }
+    
     /**
-     Essa funçao sempre roda quando o serviço é criado
-*/
+     Function called when server is created.
+     */
     func didCreateServer() {debugPrint(#function)
         let ip = Bonjour.shared.getWiFiAddress()
         let port = server.port
-        debugPrint("tries to connect in Ip: \(ip!)")
-        debugPrint("tries to connect in Port: \(String(describing: port))")
+        debugPrint("Server: Tried to connect with Ip: \(ip!)")
+        debugPrint("Server: Tried to connect to Port: \(String(describing: port))")
     }
+    
     /**
-        Essa função muda a bool para verdadeiro quando alguém conecta
+        Function called when someone connects to server.
      */
     func didConnectWithServer() {debugPrint(#function)
         isConnected = true
     }
+    
     /**
-     Escreve um Dicionario em todos os cliente contectados
+     Writes a Dictionary in every Client connected.
      - Parameters:
-        - dataDict: Dicionario que será escrito em cada cliente
+        - dataDict: Dictinonary that will be written.
      */
     func writeInSocket(dataDict: [String:Any]) {
         SocketManager.shared.server.clientSockets.forEach ({
             (socket) in
             do {
                 let data = try JSONSerialization.data(withJSONObject: dataDict, options: [])
-                debugPrint("transformou dicionario em data")
+                debugPrint("Transformed dictionary in data")
                 do {
                     try socket.write(from: data)
-                    debugPrint("escreveu no socket ==> \(dataDict)")
+                    debugPrint("Wrote on socket ==> \(dataDict)")
                 } catch let (error) {
                     debugPrint(error)
                     debugPrint("Couldn't write in socket")
@@ -83,9 +88,9 @@ extension SocketManager: ServerDelegate {
         })
     }
     /**
-     Verifica a informação em forma de dicionario que o servidor recebeu e resolve ela
+     Verifies and resolves Dictionary information that the server recieved.
      - Parameters:
-        -  receivedDict: É o dicionário que a função recebe para tratar
+        -  receivedDict: Dictionary recieved to be treated.
      */
     func didReceiveServerInfo(receivedDict: [String:Any]) { debugPrint(#function)
         if let infoReceived = receivedDict["isConnected"] {
@@ -100,7 +105,8 @@ extension SocketManager: ServerDelegate {
         }
     }
     
-    //MARK: - Decoders
+    //MARK: Decoders
+    
     func decodeTxtRecord(toDictionary recordData: Data) -> [String:String] {
         
         let decodedData: [String:Data] = NetService.dictionary(fromTXTRecord: recordData)
@@ -114,10 +120,7 @@ extension SocketManager: ServerDelegate {
         return decodedDictionary
     }
     
-    /**
-     Essa função é auxiliar a função decodeTxtRecord
-     Ela transforma data em String
-     */
+    /// Transforms Data into String. Auxiliar function to decodeTxtRecord.
     func opDataToString(_ data:Data?)->String {
         if let decoded = data {
             return String(data:  decoded, encoding: String.Encoding.utf8) ?? ""
@@ -139,14 +142,15 @@ extension SocketManager: ServerDelegate {
     }
 }
 
-//MARK: - SocketManager extension para o client
+//MARK: - SocketManager extension for the Client
+
 extension SocketManager: ClientDelegate {
     
-    //MARK: - Metodos do cliente
+    //MARK: Client Methods
+    
     /**
-     Essa função inicializa o cliente para conseguir receber e trafegar dados
+     Initizlizes Client.
      - Version: 1.0 X Animes Edition
-     - Important: Antes de enviar dados essa função é necessaria. Essa função não recebe parametros
      */
     func setUpClient() {
         client = Client()
@@ -154,23 +158,22 @@ extension SocketManager: ClientDelegate {
         client.searchForServerClient()
     }
     /**
-     Verifica as informaçoes que o cliente recebeu em forma de dicionario e as resolve
+     Verifies that the Client recived data from the Server.
      - Parameters: Dicionario recebeido pela função para ser tratado
      */
     func didReceiveClientInfo(receivedDict: [String:Any]) {debugPrint(#function)
-        debugPrint("recebeu Info")
-        debugPrint("DICIONARIO =>>" , receivedDict)
+        debugPrint("Client: Recived information")
+        debugPrint("DICTIONARY =>>" , receivedDict)
     }
     /**
-     Essa função ocorre toda vez que um serviço é encontrado
+     Called when a service is found.
      */
     func serviceFound(service: NetService) {debugPrint(#function)
         debugPrint(service.name)
         service.resolve(withTimeout: 10)
     }
-    /**
-     Depois que o serviço é encontrado ele pega as informaçoes do bonjour e as bota no bounjourDict, permitindo que o cliente se conecte ao servidor que publicou essas informações na rede.
-     */
+    
+    ///After the sevice has been found, puts Bonjour's information on bonjourDict, allowing Clients to connect  to the Server that published its information.
     func didResolveService(resolvedNetService: NetService) {
         debugPrint(#function)
         debugPrint(resolvedNetService.txtRecordData() as Any)
